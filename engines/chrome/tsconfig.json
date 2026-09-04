@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "target": "es2023",
+    "lib": [
+      "ES2023",
+      "DOM",
+      "ES2024.Promise",
+      "ESNext.Iterator",
+      "ESNext.Collection"
+    ],
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "outDir": "./build",
+    "rootDir": ".",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": true,
+    "noImplicitOverride": true,
+    "noFallthroughCasesInSwitch": true,
+    "incremental": true,
+    "allowJs": true,
+    "useUnknownInCatchVariables": false
+  },
+  "include": [
+    "src/**/*.ts",
+    "tests/**/*.ts",
+    "scripts/evaluate-tool-routing.ts",
+    "scripts/generate-docs.ts",
+    "scripts/run-tests.ts"
+  ],
+  "exclude": ["build", "node_modules"]
+}

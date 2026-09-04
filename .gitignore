@@ -1,0 +1,28 @@
+# Dependencies / build artifacts
+node_modules/
+build/
+dist/
+*.tsbuildinfo
+
+# Python
+__pycache__/
+*.pyc
+*.egg-info/
+.venv/
+
+# Evidence workspace (per-project, never commit captured data)
+js_reverse_cache/
+tasks/*/fixtures/
+
+# Plugin runtime data
+ZCODE_PLUGIN_DATA/
+
+# Security scanner hook state
+.mimosa/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
+~$*

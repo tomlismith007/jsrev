@@ -1,0 +1,12 @@
+{
+  "name": "jsrev-cli",
+  "version": "0.1.0",
+  "private": true,
+  "description": "jsrev CLI: doctor / task / crypto / hookgen / sandbox / proof / handshake",
+  "bin": {
+    "jsrev": "./jsrev.mjs"
+  },
+  "engines": {
+    "node": ">=20.19"
+  }
+}

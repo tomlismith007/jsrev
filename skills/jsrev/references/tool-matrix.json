@@ -1,0 +1,717 @@
+{
+  "version": 1,
+  "generated_at": "2026-08-30T13:51:44.057Z",
+  "source": "live tools/list via scripts/generate-tool-matrix.mjs — regenerate after any engine change; doctor validates against this file",
+  "engines": {
+    "chrome": {
+      "count": 24,
+      "tools": [
+        {
+          "name": "break_on_xhr",
+          "description": "Sets a URL-substring breakpoint for a future XHR/Fetch when runtime request arguments, local variables, or payload construction must be inspected. For an already captured request, call get_request_ini",
+          "required": [
+            "url"
+          ],
+          "properties": [
+            "url"
+          ]
+        },
+        {
+          "name": "clear_network_requests",
+          "description": "Discard captured HTTP(S) evidence for the currently selected page after confirm=true. Use this immediately before reproducing an action when a clean network capture window is needed; do not use it to ",
+          "required": [],
+          "properties": [
+            "confirm"
+          ]
+        },
+        {
+          "name": "clear_site_data",
+          "description": "Irreversibly clear browser state after confirm=true to create a clean replay environment for the selected page. Use this before replaying login, session creation, storage initialization, or other stat",
+          "required": [],
+          "properties": [
+            "confirm",
+            "clearBrowserCache"
+          ]
+        },
+        {
+          "name": "click_element",
+          "description": "Performs one verified, auditable click in the currently selected frame. Use it when the task requires activating a known button, link, or control after selecting the correct page/frame and identifying",
+          "required": [
+            "selector"
+          ],
+          "properties": [
+            "confirm",
+            "selector",
+            "index",
+            "button",
+            "modifiers",
+            "timeout"
+          ]
+        },
+        {
+          "name": "evaluate_script",
+          "description": "Evaluates one focused JavaScript function for DOM/page state, web storage, page-defined globals, a paused-frame expression, or browser-side processing of one local file. Use it when those runtime valu",
+          "required": [
+            "function"
+          ],
+          "properties": [
+            "confirm",
+            "function",
+            "mainWorld",
+            "frameIndex",
+            "outputFile",
+            "confirmOverwrite",
+            "localFilePath"
+          ]
+        },
+        {
+          "name": "get_paused_info",
+          "description": "Inspects the current call stack, source locations, and selected call-frame scopes after a code/XHR breakpoint or explicit pause has stopped execution. It neither creates a pause nor resumes one. Retur",
+          "required": [],
+          "properties": [
+            "includeScopes",
+            "maxScopeDepth",
+            "frameIndex"
+          ]
+        },
+        {
+          "name": "get_request_initiator",
+          "description": "Non-pausing first action for tracing which JavaScript initiated a retained HTTP request when CDP initiator evidence was active. Pass the reqid from list_network_requests; because initiator capture sta",
+          "required": [
+            "requestId"
+          ],
+          "properties": [
+            "requestId"
+          ]
+        },
+        {
+          "name": "get_script_source",
+          "description": "Reads a small source region around a search match, paused location, or known statement without executing or pausing the page. Select by URL when available because URL-backed scripts can be resolved ag",
+          "required": [],
+          "properties": [
+            "url",
+            "scriptId",
+            "startLine",
+            "endLine",
+            "offset",
+            "length"
+          ]
+        },
+        {
+          "name": "get_websocket_messages",
+          "description": "Inspect captured bidirectional WebSocket connections and frame payloads for the selected page. Use this for WebSocket, socket, live-update, push, streaming, or realtime message flows; use list_network",
+          "required": [],
+          "properties": [
+            "wsid",
+            "analyze",
+            "frameIndex",
+            "direction",
+            "groupId",
+            "pageSize",
+            "pageIdx",
+            "show_content",
+            "urlFilter",
+            "includePreservedConnections"
+          ]
+        },
+        {
+          "name": "list_breakpoints",
+          "description": "Inspects code and XHR/Fetch breakpoints managed by this MCP session before reproducing an action or cleaning up debugger state. Returns current code breakpointIds and the exact XHR URL patterns needed",
+          "required": [],
+          "properties": [
+            "pageSize",
+            "pageIdx"
+          ]
+        },
+        {
+          "name": "list_console_messages",
+          "description": "Inspects console messages and uncaught page errors captured for the selected page. Use it to diagnose runtime failures, warnings, application logs, or values already emitted by page code; use search_i",
+          "required": [],
+          "properties": [
+            "msgid",
+            "pageSize",
+            "pageIdx",
+            "types",
+            "includePreservedMessages"
+          ]
+        },
+        {
+          "name": "list_network_requests",
+          "description": "Inspect captured HTTP(S) traffic for the currently selected page. Use this for API calls, request or response headers and bodies, redirects, authentication/session flows, replay or signing inputs, and",
+          "required": [],
+          "properties": [
+            "reqid",
+            "pageSize",
+            "pageIdx",
+            "methods",
+            "resourceTypes",
+            "urlFilter",
+            "cookieName",
+            "outputFile",
+            "confirmOverwrite",
+            "outputPart"
+          ]
+        },
+        {
+          "name": "list_scripts",
+          "description": "Discovers JavaScript currently loaded in the selected debugger context—the main frame by default, or the frame chosen with select_frame. Use select_frame first for iframe-specific source/debugger work",
+          "required": [],
+          "properties": [
+            "filter",
+            "pageSize",
+            "pageIdx"
+          ]
+        },
+        {
+          "name": "navigate_page",
+          "description": "Navigates, reloads, or moves through history in the currently selected page. Use it to reproduce requests, trigger configured breakpoints, refresh scripts, or continue a workflow in the same tab; use ",
+          "required": [],
+          "properties": [
+            "type",
+            "url",
+            "timeout"
+          ]
+        },
+        {
+          "name": "new_page",
+          "description": "Opens a separate browser page for a URL, reusing an existing about:blank startup tab when available. Use this when the task needs another tab or should preserve the currently selected page; use naviga",
+          "required": [
+            "url"
+          ],
+          "properties": [
+            "url",
+            "timeout"
+          ]
+        },
+        {
+          "name": "pause_or_resume",
+          "description": "Explicitly requests an immediate pause or resumes an existing paused execution; it never toggles implicitly. Use a code breakpoint or break_on_xhr instead when a specific statement/request should stop",
+          "required": [
+            "action"
+          ],
+          "properties": [
+            "action"
+          ]
+        },
+        {
+          "name": "remove_breakpoint",
+          "description": "Removes a known code breakpoint, XHR/Fetch breakpoint, or every MCP-managed breakpoint after explicit confirmation. Use breakpointId from set_breakpoint_on_text/list_breakpoints for remove_code, or re",
+          "required": [
+            "action"
+          ],
+          "properties": [
+            "action",
+            "breakpointId",
+            "url",
+            "confirm"
+          ]
+        },
+        {
+          "name": "save_script_source",
+          "description": "Saves one complete JavaScript or WASM source for local inspection when an inline snippet is insufficient, especially for large or minified bundles. Prefer get_script_source for a small known region an",
+          "required": [
+            "filePath"
+          ],
+          "properties": [
+            "url",
+            "scriptId",
+            "filePath",
+            "confirmOverwrite",
+            "format"
+          ]
+        },
+        {
+          "name": "search_in_sources",
+          "description": "Finds a known function name, endpoint, string literal, token, or code pattern in JavaScript loaded by the selected debugger context—the main frame by default, or the frame chosen with select_frame. It",
+          "required": [
+            "query"
+          ],
+          "properties": [
+            "query",
+            "caseSensitive",
+            "isRegex",
+            "maxResults",
+            "maxLineLength",
+            "excludeMinified",
+            "urlFilter"
+          ]
+        },
+        {
+          "name": "select_frame",
+          "description": "Lists or selects frames, including iframes, within the current page. Use it when the target element, page-defined global, script, or execution context may live in an iframe: first list frames, then pa",
+          "required": [],
+          "properties": [
+            "frameIdx",
+            "pageSize",
+            "listPageIdx"
+          ]
+        },
+        {
+          "name": "select_page",
+          "description": "Lists or selects open browser pages. Use it without pageIdx to identify the active page or choose the correct tab before inspecting network traffic, scripts, frames, or console output; pass pageIdx to",
+          "required": [],
+          "properties": [
+            "pageIdx",
+            "pageSize",
+            "listPageIdx"
+          ]
+        },
+        {
+          "name": "set_breakpoint_on_text",
+          "description": "Sets a restorable URL-backed breakpoint when distinctive code text is known and its runtime values must be observed. Call it directly when the user already supplies precise text plus any URL/occurrenc",
+          "required": [
+            "text"
+          ],
+          "properties": [
+            "text",
+            "urlFilter",
+            "occurrence",
+            "condition"
+          ]
+        },
+        {
+          "name": "step",
+          "description": "Advances JavaScript execution by one debugger operation from an existing pause and returns the next stopped call frame with concise source context. Use after get_paused_info or evaluate_script when co",
+          "required": [
+            "direction"
+          ],
+          "properties": [
+            "direction"
+          ]
+        },
+        {
+          "name": "take_screenshot",
+          "description": "Captures the visual state of the currently selected page. Use it to verify page layout, visible UI state, selector targets, in-page dialogs/modals, or the effect of a navigation/click; it is not a sub",
+          "required": [],
+          "properties": [
+            "format",
+            "quality",
+            "fullPage",
+            "filePath",
+            "confirmOverwrite"
+          ]
+        }
+      ]
+    },
+    "firefox": {
+      "count": 36,
+      "tools": [
+        {
+          "name": "launch_browser",
+          "description": "Launch the Camoufox anti-detection browser, or attach to a running one.\n\nArgs:\n    headless: Run in headless mode (default False).\n    os_type: OS fingerprint - \"auto\", \"windows\", \"macos\", or \"linux\".",
+          "required": [],
+          "properties": [
+            "headless",
+            "os_type",
+            "locale",
+            "proxy",
+            "humanize",
+            "geoip",
+            "block_images",
+            "block_webrtc",
+            "enable_trace",
+            "ws_endpoint"
+          ]
+        },
+        {
+          "name": "close_browser",
+          "description": "Close the Camoufox browser and release all resources.",
+          "required": [],
+          "properties": []
+        },
+        {
+          "name": "navigate",
+          "description": "Navigate to a URL, with optional hook pre-injection and redirect tracing.\n\nArgs:\n    url: Target URL.\n    wait_until: \"load\", \"domcontentloaded\", or \"networkidle\".\n    pre_inject_hooks: Hook preset na",
+          "required": [
+            "url"
+          ],
+          "properties": [
+            "url",
+            "wait_until",
+            "pre_inject_hooks",
+            "collect_response_chain",
+            "clear_network_capture"
+          ]
+        },
+        {
+          "name": "reload",
+          "description": "Reload the current page, preserving any init scripts.",
+          "required": [],
+          "properties": [
+            "wait_until"
+          ]
+        },
+        {
+          "name": "take_screenshot",
+          "description": "Take a screenshot of the current page or a specific element.\n\nArgs:\n    full_page: Capture the entire scrollable page.\n    selector: CSS selector of a specific element to capture.\n",
+          "required": [],
+          "properties": [
+            "full_page",
+            "selector"
+          ]
+        },
+        {
+          "name": "take_snapshot",
+          "description": "Get the accessibility tree of the current page (token-efficient).",
+          "required": [],
+          "properties": []
+        },
+        {
+          "name": "click",
+          "description": "Click on a page element.",
+          "required": [
+            "selector"
+          ],
+          "properties": [
+            "selector"
+          ]
+        },
+        {
+          "name": "type_text",
+          "description": "Type text into an input field with realistic keystroke delays.",
+          "required": [
+            "selector",
+            "text"
+          ],
+          "properties": [
+            "selector",
+            "text",
+            "delay"
+          ]
+        },
+        {
+          "name": "wait_for",
+          "description": "Wait for an element to appear or a network request matching a URL pattern.",
+          "required": [],
+          "properties": [
+            "selector",
+            "url_pattern",
+            "timeout"
+          ]
+        },
+        {
+          "name": "get_page_info",
+          "description": "Get current page URL, title, and viewport size.",
+          "required": [],
+          "properties": []
+        },
+        {
+          "name": "reset_browser_state",
+          "description": "Reset MCP-side browser residual state without closing the browser.\n\nArgs:\n    clear_persistent_hooks: Remove all persistent init scripts.\n    clear_network_capture: Clear network request buffer and st",
+          "required": [],
+          "properties": [
+            "clear_persistent_hooks",
+            "clear_network_capture",
+            "clear_active_routes",
+            "clear_cookies",
+            "clear_storage"
+          ]
+        },
+        {
+          "name": "scripts",
+          "description": "Script inspection (v0.9.0 unified).\n\nReplaces list_scripts / get_script_source / save_script.\n\nArgs:\n    action:\n      \"list\" — list all loaded scripts (src, type, inline preview)\n      \"get\"  — get f",
+          "required": [
+            "action"
+          ],
+          "properties": [
+            "action",
+            "url",
+            "save_path"
+          ]
+        },
+        {
+          "name": "search_code",
+          "description": "Search keyword in loaded scripts (v0.9.0 unified).\n\nReplaces search_code (all scripts) + search_code_in_script (single script).\n\nArgs:\n    keyword: The keyword to search for (case-sensitive substring ",
+          "required": [
+            "keyword"
+          ],
+          "properties": [
+            "keyword",
+            "script_url",
+            "context_chars",
+            "context_lines",
+            "max_results"
+          ]
+        },
+        {
+          "name": "evaluate_js",
+          "description": "Execute an arbitrary JavaScript expression in the page context and return the result.\n\nv1.0.1 fix: correctly handles undefined/null/void/Symbol return values\nwithout triggering JSON.parse crashes.\n\nRe",
+          "required": [
+            "expression"
+          ],
+          "properties": [
+            "expression",
+            "await_promise"
+          ]
+        },
+        {
+          "name": "hook_function",
+          "description": "Hook or trace a function (v0.9.0 unified).\n\nReplaces hook_function + trace_function.\n\nArgs:\n    function_path: Full path like \"window.encrypt\",\n        \"XMLHttpRequest.prototype.open\", \"JSON.stringify",
+          "required": [
+            "function_path"
+          ],
+          "properties": [
+            "function_path",
+            "mode",
+            "hook_code",
+            "position",
+            "non_overridable",
+            "persistent",
+            "log_args",
+            "log_return",
+            "log_stack",
+            "max_captures"
+          ]
+        },
+        {
+          "name": "inject_hook_preset",
+          "description": "Inject a pre-built hook template for common reverse engineering tasks.\n\nAvailable presets:\n    - \"xhr\": Hook XMLHttpRequest to log all XHR requests.\n    - \"fetch\": Hook window.fetch to log all fetch r",
+          "required": [
+            "preset"
+          ],
+          "properties": [
+            "preset",
+            "persistent"
+          ]
+        },
+        {
+          "name": "remove_hooks",
+          "description": "Remove installed hooks and restore original objects in-place.\n\nArgs:\n    keep_persistent: If True, keep persistent init_scripts registered.\n\nReturns:\n    dict with status, restored_objects, cleared co",
+          "required": [],
+          "properties": [
+            "keep_persistent"
+          ]
+        },
+        {
+          "name": "get_console_logs",
+          "description": "Get console output collected from the page.\n\nArgs:\n    level: Filter by log level - \"log\", \"warn\", \"error\", or \"info\".\n    keyword: Filter logs containing this keyword in the text.\n    clear: If True,",
+          "required": [],
+          "properties": [
+            "level",
+            "keyword",
+            "clear"
+          ]
+        },
+        {
+          "name": "network_capture",
+          "description": "Unified network capture control (v0.9.0).\n\nReplaces start_network_capture / stop_network_capture.\n\nArgs:\n    action:\n      \"start\"  — begin capturing network events\n      \"stop\"   — stop capturing (bu",
+          "required": [
+            "action"
+          ],
+          "properties": [
+            "action",
+            "url_pattern",
+            "capture_body"
+          ]
+        },
+        {
+          "name": "list_network_requests",
+          "description": "List captured network requests with optional filters.\n\nArgs:\n    url_filter: Substring filter for request URLs.\n    url_contains_domain: Convenience domain filter (e.g. 'nmpa.gov.cn').\n    method: HTT",
+          "required": [],
+          "properties": [
+            "url_filter",
+            "url_contains_domain",
+            "method",
+            "resource_type",
+            "status_code"
+          ]
+        },
+        {
+          "name": "get_network_request",
+          "description": "Get full details of a specific captured network request.\n\nArgs:\n    request_id: The ID of the request (from list_network_requests).\n    include_body: Include response body (default False).\n    include",
+          "required": [
+            "request_id"
+          ],
+          "properties": [
+            "request_id",
+            "include_body",
+            "include_headers",
+            "max_body_size"
+          ]
+        },
+        {
+          "name": "get_request_initiator",
+          "description": "Get the JS call stack that initiated a network request.\n\nGolden path: see encrypted param -> get_request_initiator -> find signing function.\nRequires inject_hook_preset(\"xhr\"/\"fetch\") BEFORE navigatin",
+          "required": [
+            "request_id"
+          ],
+          "properties": [
+            "request_id"
+          ]
+        },
+        {
+          "name": "intercept_request",
+          "description": "Intercept network requests matching a pattern.\n\nArgs:\n    url_pattern: URL glob pattern (e.g. \"**/api/login*\").\n    action: \"log\", \"block\", \"modify\", \"mock\", or \"stop\" (unroute).\n    modify_headers: H",
+          "required": [
+            "url_pattern"
+          ],
+          "properties": [
+            "url_pattern",
+            "action",
+            "modify_headers",
+            "modify_body",
+            "mock_response"
+          ]
+        },
+        {
+          "name": "cookies",
+          "description": "Cookie management (v0.9.0 unified).\n\nReplaces get_cookies / set_cookies / delete_cookies.\n\nArgs:\n    action:\n      \"get\"   — return cookies (optionally filtered by domain)\n      \"set\"   — set cookies ",
+          "required": [
+            "action"
+          ],
+          "properties": [
+            "action",
+            "domain",
+            "cookies_list",
+            "name"
+          ]
+        },
+        {
+          "name": "get_storage",
+          "description": "Get the contents of localStorage or sessionStorage.\n\nArgs:\n    storage_type: \"local\" for localStorage, \"session\" for sessionStorage.\n\nReturns:\n    dict with all key-value pairs in the storage.\n",
+          "required": [],
+          "properties": [
+            "storage_type"
+          ]
+        },
+        {
+          "name": "export_state",
+          "description": "Export the complete browser state (cookies + storage) to a JSON file.\n\nArgs:\n    save_path: Local file path to save the state JSON.\n\nReturns:\n    dict with status and the save path.\n",
+          "required": [
+            "save_path"
+          ],
+          "properties": [
+            "save_path"
+          ]
+        },
+        {
+          "name": "import_state",
+          "description": "Import browser state from a JSON file by creating a new context.\n\nArgs:\n    state_path: Path to the state JSON file (exported by export_state).\n\nReturns:\n    dict with status and the new context name.",
+          "required": [
+            "state_path"
+          ],
+          "properties": [
+            "state_path"
+          ]
+        },
+        {
+          "name": "analyze_cookie_sources",
+          "description": "Attribute every observed cookie to its source (HTTP header vs JS).\n\nCombines:\n  - Captured network responses' Set-Cookie headers\n    (requires start_network_capture was active)\n  - document.cookie wri",
+          "required": [],
+          "properties": [
+            "name_filter"
+          ]
+        },
+        {
+          "name": "hook_jsvmp_interpreter",
+          "description": "Install a JSVMP runtime probe.\n\nMulti-path instrumentation for JSVMP interpreters. Wraps Reflect.get/apply,\ninstalls Proxies on globals (navigator, screen, etc.), intercepts timing APIs.\n\nLIMITATIONS:",
+          "required": [],
+          "properties": [
+            "script_url",
+            "persistent",
+            "mode",
+            "track_calls",
+            "track_props",
+            "track_reflect",
+            "proxy_objects",
+            "max_entries"
+          ]
+        },
+        {
+          "name": "compare_env",
+          "description": "Collect browser environment fingerprint data for comparison with Node.js/jsdom.\n\nArgs:\n    properties: Optional list of specific properties to check.\n        If omitted, checks navigator, screen, canv",
+          "required": [],
+          "properties": [
+            "properties"
+          ]
+        },
+        {
+          "name": "instrumentation",
+          "description": "JSVMP source-level instrumentation (v0.9.0 unified).\n\nReplaces instrument_jsvmp_source / get_instrumentation_log /\nstop_instrumentation / reload_with_hooks.\n\nArgs:\n    action:\n      \"install\" — regist",
+          "required": [
+            "action"
+          ],
+          "properties": [
+            "action",
+            "url_pattern",
+            "mode",
+            "tag",
+            "rewrite_member_access",
+            "rewrite_calls",
+            "max_rewrites",
+            "fallback_on_error",
+            "ignore_csp",
+            "clear_log",
+            "wait_until",
+            "tag_filter",
+            "type_filter",
+            "key_filter",
+            "limit",
+            "clear",
+            "filter_property_names",
+            "filter_object_names",
+            "max_file_size",
+            "on_oversized",
+            "include_source_site"
+          ]
+        },
+        {
+          "name": "check_environment",
+          "description": "One-stop self-check of MCP environment, dependencies, and browser state.\n\nv1.0.0: session-related checks removed (session mechanism removed).\nChecks MCP version, critical dependencies (esprima, playwr",
+          "required": [],
+          "properties": []
+        },
+        {
+          "name": "verify_signer_offline",
+          "description": "Offline verify a signing function against user-provided samples.\n\nTypical workflow:\n  1. Capture real signed requests via network_capture + list_network_requests\n  2. Extract samples into a list\n  3. ",
+          "required": [
+            "signer_code",
+            "samples"
+          ],
+          "properties": [
+            "signer_code",
+            "samples",
+            "compare_params"
+          ]
+        },
+        {
+          "name": "trace_property_access",
+          "description": "Engine-level DOM property access tracing (JSVMP-undetectable).\n\nTraces which DOM properties (navigator, screen, window, canvas, webgl, etc.)\nare accessed by page JavaScript including JSVMP bytecode in",
+          "required": [],
+          "properties": [
+            "duration",
+            "mode",
+            "filter_object",
+            "search_query",
+            "limit",
+            "bucket_ms",
+            "collect_values"
+          ]
+        },
+        {
+          "name": "list_trace_files",
+          "description": "List all trace files on disk (for post-hoc analysis).\n\nReturns:\n    dict with traces_dir, total file count, and file details.\n",
+          "required": [],
+          "properties": [
+            "limit"
+          ]
+        },
+        {
+          "name": "query_trace_file",
+          "description": "Query a specific historical trace file (post-hoc analysis).\n\nArgs:\n    file_path: Path to the .jsonl trace file.\n    mode: Same as trace_property_access (summary/timeline/sequence/search).\n    filter_",
+          "required": [
+            "file_path"
+          ],
+          "properties": [
+            "file_path",
+            "mode",
+            "filter_object",
+            "search_query",
+            "limit",
+            "bucket_ms"
+          ]
+        }
+      ]
+    }
+  }
+}

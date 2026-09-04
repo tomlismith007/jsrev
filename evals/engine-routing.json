@@ -1,0 +1,12 @@
+[
+  {"id": "r01", "query": "帮我看看这个接口的 sign 是怎么算的，最好能断点跟一下栈和中间值", "expect_engine": "chrome", "note": "真断点/单步/暂停态求值只有 chrome 有（engine-guide §1）"},
+  {"id": "r02", "query": "RS 保护的 cookie，想安全观测它被谁写入——不能用会被检测的 Proxy hook", "expect_engine": "firefox", "note": "签名型只允许 transparent 探针或源码插桩"},
+  {"id": "r03", "query": "JSVMP 保护的参数要做源码级插桩，拿 dispatch 日志和环境指纹集", "expect_engine": "firefox", "note": "instrumentation 是 firefox 独有"},
+  {"id": "r04", "query": "把这个页面的所有请求和响应 body 完整抓下来存档", "expect_engine": "chrome", "note": "急切抓 body + reqid 详情，懒激活非回溯"},
+  {"id": "r05", "query": "对比浏览器环境和 Node 补环境之间的指纹差异，逐项列出", "expect_engine": "firefox", "note": "compare_env 是 firefox 独有采集端"},
+  {"id": "r06", "query": "这个 cookie 到底是服务端 Set-Cookie 下发的还是页面 JS 写进去的？", "expect_engine": "firefox", "note": "analyze_cookie_sources 三源归因"},
+  {"id": "r07", "query": "离线还原的签名和浏览器真值有细微不一致，帮我做字符级首偏差定位", "expect_engine": "firefox", "note": "verify_signer_offline"},
+  {"id": "r08", "query": "抓取并分析这个页面的 WebSocket 帧内容和时序", "expect_engine": "chrome", "note": "get_websocket_messages 是 chrome 主力"},
+  {"id": "r09", "query": "拦截某个请求并改写它的参数做对照实验", "expect_engine": "firefox", "note": "intercept_request 只有 firefox 有"},
+  {"id": "r10", "query": "GT4 验证码按已有纯 Python 回归模板复现一遍，不需要现场取证", "expect_engine": "none", "note": "verticals/captcha 纯 Python 路径，无需浏览器引擎"}
+]

@@ -1,0 +1,29 @@
+{
+  "mcpServers": {
+    "jsrev-chrome": {
+      "type": "stdio",
+      "command": "node",
+      "args": [
+        "${ZCODE_PLUGIN_ROOT}/engines/chrome/build/src/index.js"
+      ],
+      "env": {
+        "JSREV_HOME": "${user_config.jsrev_home}"
+      },
+      "enabled": true,
+      "timeoutMs": 30000
+    },
+    "jsrev-firefox": {
+      "type": "stdio",
+      "command": "python",
+      "args": [
+        "${ZCODE_PLUGIN_ROOT}/engines/firefox/launch_server.py"
+      ],
+      "env": {
+        "JSREV_HOME": "${user_config.jsrev_home}",
+        "JSREV_PROXY": "${user_config.firefox_proxy}"
+      },
+      "enabled": true,
+      "timeoutMs": 30000
+    }
+  }
+}
