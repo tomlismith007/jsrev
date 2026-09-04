@@ -70,7 +70,7 @@
 **插件 source 类型（从宿主源码 `resources/glm/zcode.cjs` 分发逻辑实读）**：`directory`（本地目录）/ `github`（repo）/ `git`（url）/ `url`（type=zip 需 sha256，或 git）/ `git-subdir` / 纯字符串路径（相对 marketplace 根或绝对路径）；`path`/`npm`/`pip` 为非法类型——**首次安装报 "Plugin source is invalid or unsupported: path" 即因类型名写错，正确名是 `directory`**。
 
 **装载路径（已修正）**：
-- `marketplace.json` 插件条目 source = `{"source": "directory", "path": "E:\桌面文档\resver\jsrev"}`（绝对路径——相对值按宿主进程 CWD 解析不可靠）；仓库根与宿主缓存副本（`~/.zcode/cli/plugins/marketplaces/jsrev-local/marketplace.json`）**两份都已改**。
+- `marketplace.json` 插件条目 source = `{"source": "directory", "path": "."}`（本地开发时曾用绝对路径——相对值按宿主进程 CWD 解析不可靠）；仓库根与宿主缓存副本（`~/.zcode/cli/plugins/marketplaces/jsrev-local/marketplace.json`）**两份都已改**。
 - 用户已在 UI 注册 `jsrev-local` marketplace（宿主自动规范化为 directory 源并整仓快照）——**重试安装即可**。
 
 ## 6. 安装 Runbook（T1-lite 终验步骤）

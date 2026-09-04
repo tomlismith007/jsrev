@@ -13,7 +13,7 @@
       "name": "jsrev",
       "source": {
         "source": "directory",
-        "path": "E:\\桌面文档\\resver\\jsrev"
+        "path": "."
       },
       "description": "JS reverse engineering toolkit for coding agents: dual-engine browser MCP (Chromium debugger + Camoufox instrumentation), progressive-disclosure skill, and an evidence-workspace delivery contract. For authorized targets only; the user is responsible for ensuring authorization.",
       "description_i18n": {
