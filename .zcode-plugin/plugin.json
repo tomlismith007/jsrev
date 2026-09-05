@@ -5,7 +5,7 @@
     "en": "JS reverse engineering toolkit: dual-engine MCP (Chromium debugger + Camoufox instrumentation), methodology skill, evidence workspace contract. Authorized targets only.",
     "zh-CN": "JS 逆向工具包：双引擎 MCP（Chromium 调试器 + Camoufox 插桩）、方法论技能、证据工作区契约。仅限授权目标，用户须自行确保已获授权。"
   },
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": {
     "name": "jsrev"
   },
